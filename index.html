@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spunta</title>
+<meta name="description" content="Spunta: segna ogni giorno le piccole azioni di cura e guarda come vanno nel tempo.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121514" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Spunta">
+<meta name="format-detection" content="telephone=no">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <main>
+    <section class="view" id="view-oggi" data-view="oggi" hidden></section>
+    <section class="view" id="view-storico" data-view="storico" hidden></section>
+    <section class="view" id="view-statistiche" data-view="statistiche" hidden></section>
+    <section class="view" id="view-dati" data-view="dati" hidden></section>
+  </main>
+  <nav class="tabbar" aria-label="Sezioni">
+    <button type="button" class="tab" data-tab="oggi"><span class="tab-ic" data-icon="tabToday"></span><span>Oggi</span></button>
+    <button type="button" class="tab" data-tab="storico"><span class="tab-ic" data-icon="tabHistory"></span><span>Storico</span></button>
+    <button type="button" class="tab" data-tab="statistiche"><span class="tab-ic" data-icon="tabStats"></span><span>Statistiche</span></button>
+    <button type="button" class="tab" data-tab="dati"><span class="tab-ic" data-icon="tabData"></span><span>Dati</span></button>
+  </nav>
+</div>
+
+<div id="sheet" class="sheet-wrap" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"></div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="tip" class="tip" hidden></div>
+<div id="update" class="update" hidden>
+  <span>È pronta una nuova versione.</span>
+  <button type="button" class="btn sm primary" data-reload>Aggiorna</button>
+</div>
+
+<noscript><p class="noscript">Spunta ha bisogno di JavaScript per funzionare.</p></noscript>
+<script src="app.js" defer></script>
+</body>
+</html>
